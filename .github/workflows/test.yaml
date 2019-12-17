@@ -1,0 +1,22 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  old:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "ubuntu-16.04", "windows-latest", "windows-2016", "macOS-latest"]
+    runs-on: ${{matrix.os}}
+    steps:
+    - run: echo "$RUNNER_TOOL_CACHE"
+      shell: bash
+    - run: echo "$RUNNER_TOOLSDIRECTORY"
+      shell: bash
+    - run: echo "$AGENT_TOOLSDIRECTORY"
+      shell: bash
+    - run: echo "$RUNNER_TOOL_CACHE"
+      shell: bash
+    - run: echo "$agent.ToolsDirectory"
+      shell: bash
