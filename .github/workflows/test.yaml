@@ -10,6 +10,8 @@ jobs:
         os: ["ubuntu-latest", "ubuntu-16.04", "windows-latest", "windows-2016", "macOS-latest"]
     runs-on: ${{matrix.os}}
     steps:
+    - run: ls $RUNNER_TOOL_CACHE
+      shell: bash
     - run: echo "$RUNNER_TOOL_CACHE"
       shell: bash
     - run: echo "$RUNNER_TOOLSDIRECTORY"
