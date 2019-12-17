@@ -12,6 +12,8 @@ jobs:
     steps:
     - run: ls $RUNNER_TOOL_CACHE
       shell: bash
+    - run: ls $AGENT_TOOLSDIRECTORY
+      shell: bash
     - run: echo "$RUNNER_TOOL_CACHE"
       shell: bash
     - run: echo "$RUNNER_TOOLSDIRECTORY"
