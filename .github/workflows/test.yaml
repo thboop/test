@@ -1,15 +1,11 @@
-name: Node CI
-
-on: [push, pull_request]
-
+name: I was edited
+on: [push]
 jobs:
-  old:
+  test:
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-latest", "ubuntu-16.04", "windows-latest", "windows-2016", "macOS-latest"]
-    runs-on: ${{matrix.os}}
+        os: [windows-latest, macos-latest, ubuntu-latest]
     steps:
-    - run: |
-        [ "$(ls -A $RUNNER_TOOL_CACHE)" ] && echo "Not Empty" || echo "Empty"
-      shell: bash
+      - uses: thboop/typescript-action@master
