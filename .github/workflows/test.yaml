@@ -10,6 +10,4 @@ jobs:
     steps:
       - uses: thboop/typescript-action@master
         with: 
-          token: ${{github.token}}
-          owner: thboop
-          repo: test
+          myToken: ${{github.token}}
