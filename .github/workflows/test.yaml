@@ -1,5 +1,5 @@
 name: I was edited
-on: [push]
+on: [push, pull_request, pull_request_review]
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -9,3 +9,5 @@ jobs:
         os: [windows-latest, macos-latest, ubuntu-latest]
     steps:
       - uses: thboop/typescript-action@master
+        with: 
+          token: ${{github.token}}
