@@ -1,0 +1,9 @@
+name: I was edited
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for 6 hours
+        run: echo "hello"
+        shell: bash
